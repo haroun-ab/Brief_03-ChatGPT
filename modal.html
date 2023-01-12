@@ -14,53 +14,71 @@
     </head>
     <body>
 
-    <!-- Modal 1 -->
-
-        <div id="myModal" class="modal fade" tabindex="-1">
-            <div class="modal-dialog --bs-secondary-bg-rgb">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">ChatGPT</h5>
-                    </div>
-                    <div class="modal-body">
-                        <p>This is a free research preview.</p>
-                        <form>
-                            <div class="form-group">
-
-                                <p>Our goal is to get external feedback in order to improve</br> our systems and make them safer.</p>
-                            </div>
-                            <div class="form-group">
-                                <p>While we have safeguards in place, the system may </br>occasionally generate incorrect or misleading information </br> and produce offensive or biasedcontent. It is not </br>intended to give advice.</p>
-                            </div>
-                            <!-- Button trigger modal -->
-                            <button type="submit" class="btn btn-primary d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Next</button>
-                        </form>
-                    </div>
+         <!-- Modal 1 -->
+    <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
+     <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel1">Chat GPT</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="m-3">
+                <div class="form-group">
+                    <p>This is a free research preview.</p>
+                </div>
+                <div class="form-group">
+                    <p>Our goal is to get external feedback in order to improve</br> our systems and make them safer.</p>
+                </div>
+                <div class="form-group">
+                    <p>While we have safeguards in place, the system may </br>occasionally generate incorrect or misleading information </br> and produce offensive or biasedcontent. It is not </br>intended to give advice.</p>
                 </div>
             </div>
+            <div class="d-flex justify-content-between modal-footer">
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next</button>
+            </div>
         </div>
+     </div>
+    </div>
 
-    <!-- Modal 2 -->
           
-          <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
+          <!-- Modal 2 -->
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                    Hide this modal and show the first with the button below.
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Understood</button>
+                <div class="d-flex justify-content-between modal-footer">
+                    <button class="btn btn-primary " data-bs-target="#exampleModalToggleLabel1" data-bs-toggle="modal">Back</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
+    </div>
+
+          <!-- Modal 3 -->
+    <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 3</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Hide this modal and show the first with the button below.
+                </div>
+                <div class="d-flex justify-content-between modal-footer">
+                    <button class="btn btn-primary " data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Back</button>
+                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
