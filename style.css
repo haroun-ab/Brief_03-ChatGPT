@@ -1,5 +1,5 @@
 
-/*-------- Couleurs --------- */
+/*--------- Couleurs ---------*/
 
 /* background (main page) */
 .bg-primary{
@@ -16,13 +16,26 @@
     background : #2A2C2E !important;
 }
 
-/*Ombres*/
+/* border-secondary-subtle */
+.border-secondary-subtle{
+    border-color: #393b3e !important;
+}
+
+/*---------- Police ----------*/
+
+.fs-7{
+    font-size: 15px;
+}
+
+p, #p{
+    font-size: small;
+}
+
+/*---------- Ombres ----------*/
 .shadow{
     box-shadow: 0 0 1rem #2b2b30 !important;
 }
 
-/*---------Police---------*/
-
-.fs-7{
-    font-size: 15px;
+.shadow-lg{
+    box-shadow: 0 1rem 1rem #2b2b2b !important;
 }
