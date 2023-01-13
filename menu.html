@@ -9,33 +9,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
-<body class="vh-100">
-    <div class="offcanvas offcanvas-start show text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
-            <div class="offcanvas-body">
-                <div id="newChatBtn">
-                <button type="button" class="btn btn-outline-secondary w-100 d-flex col-align-self-start"">+ New chat</button>
-            </div>
-            <div id="links" class="position-absolute bottom-0 start-0 w-100">  
-                    <hr class="bg-danger border-2 border-top border-dark-subtle m-2"> 
-                <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
-                    <i class="bi bi-question-square pe-2"></i>
-                    Help</a>
-                <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
-                    <i class="bi bi-moon pe-2"></i>
-                    Dark mode</a>
-                <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
-                    <i class="bi bi-discord pe-2"></i>
-                    OpenAI Discord</a>
-                <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
-                    <i class="bi bi-box-arrow-up-right pe-2"></i>
-                    Updates & FAQ</a>
-                <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
-                    <i class="bi bi-box-arrow-right pe-2"></i>
-                    Log out</a>
-            </div>
+<body >
+    <!-- <div class="offcanvas offcanvas-start show text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="newChatBtn">
+            <button type="button" class="btn btn-outline-secondary w-100 d-flex col-align-self-start">+ New chat</button>
         </div>
+        <div id="links" class="w-100">  
+                <hr class="bg-danger border-2 border-top border-dark-subtle m-2"> 
+            <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                <i class="bi bi-question-square pe-2"></i>
+                Help</a>
+            <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                <i class="bi bi-moon pe-2"></i>
+                Dark mode</a>
+            <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                <i class="bi bi-discord pe-2"></i>
+                OpenAI Discord</a>
+            <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                <i class="bi bi-box-arrow-up-right pe-2"></i>
+                Updates & FAQ</a>
+            <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                <i class="bi bi-box-arrow-right pe-2"></i>
+                Log out</a>
+        </div>
+    </div>
+    </div> -->
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="•staticBackdrop" aria-controls="staticBackdrop">
+        Toggle static offcanvas
+      </button>
+      
+      <div class="offcanvas-sm offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            I will not close if you click outside of me.
+          </div>
         </div>
       </div>
+
+        
 </body>
 </html>
 
