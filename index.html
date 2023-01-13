@@ -11,14 +11,54 @@
 </head>
     <!-- <div class="text-light bg-white bg-opacity-50">-</div>
     <div class="text-light bg-white bg-opacity-25">-</div> -->
-    <body class="d-flex bg-dark vh-100 text-white" style="min-width: 390px;">
+    <body class="d-flex flex-column bg-dark vh-100 text-white" style="min-width: 390px;">
+
+    <!-- HEADER -->
+    <header class="d-sm-none d-flex justify-content-between col-12 tabindex=2 border-bottom border-dark-subtle">
+        <div id="headerbtn1">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
+                <i class="bi bi-list"></i>
+            </button> 
+        </div>  
+        <div id="headerbtn2"> 
+            <button type="button" class="btn btn-dark w-100 d-flex col-align-self-start">New chat</button>
+        </div>  
+        <div id="headerbtn3">
+            <button type="button" class="btn btn-dark w-100 d-flex col-align-self-start">+</button>
+        </div>
+    </header>
+
         <!-- MENU -->
-        <nav class="d-none d-md-block col-md-4 col-xl-3 col-xxl-2 min-vh-100 bg-dark">
-            MENU
-        </nav>
+        <nav class="d-none d-md-block col-sm-2">
+            <div class="offcanvas offcanvas-lg offcanvas-start show text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
+                <div class="offcanvas-body d-flex flex-column justify-content-between">
+                    <div id="newChatBtn">
+                    <button type="button" class="btn btn-outline-secondary w-100 d-flex col-align-self-start">+ New chat</button>
+                </div>
+                <div id="links" class="w-100">  
+                        <hr class="bg-danger border-2 border-top border-dark-subtle m-2"> 
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                        <i class="bi bi-question-square pe-2"></i>
+                        Help</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                        <i class="bi bi-moon pe-2"></i>
+                        Dark mode</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                        <i class="bi bi-discord pe-2"></i>
+                        OpenAI Discord</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                        <i class="bi bi-box-arrow-up-right pe-2"></i>
+                        Updates & FAQ</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button">
+                        <i class="bi bi-box-arrow-right pe-2"></i>
+                        Log out</a>
+                </div>
+            </div>
+            </div>
+        </nav> 
 
         <!-- HOME -->
-        <main class="position-relative col-12 col-md-8 col-xl-9 col-xxl-10 bg-secondary bg-opacity-10 d-flex flex-column justify-content-center">
+        <main class="position-relative col-12 col-sm-12 bg-secondary bg-opacity-10 d-flex flex-column justify-content-center">
             <section id="accueil" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mb-5">
                 <h1 class="text-start text-sm-center m-5 fw-bold">ChatGPT</h1>
                 <div class="d-flex justify-content-evenly text-center">
