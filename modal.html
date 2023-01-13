@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Modal 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./modal.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
@@ -15,73 +16,77 @@
     <body>
 
          <!-- Modal 1 -->
-    <div class="modal fade" id="myModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
+    <div class="modal fade text-white" id="myModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalToggleLabel1">ChatGPT</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content bg-dark">
+            <div class="modal- m-4">
+                <h1 class="modal-title fs-5 p-3 border-bottom border-secondary-subtle" id="exampleModalToggleLabel1">ChatGPT</h1>
             </div>
             <div class="m-3">
                 <div class="form-group">
                     <p>This is a free research preview.</p>
                 </div>
-                <div class="form-group">
-                    <p>Our goal is to get external feedback in order to improve</br> our systems and make them safer.</p>
+
+                <div class="form-group bg-secondary border-dark rounded d-flex align-items-center justify-content-around">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                    <p class="mt-2">Our goal is to get external feedback in order to improve</br> our systems and make them safer.</p>
                 </div>
-                <div class="form-group">
+                
+                <div class="form-group bg-secondary border-dark rounded p-1 d-flex align-items-center justify-content-around mt-3 me-10 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-diamond-fill" viewBox="0 0 16 16">
+                        <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
                     <p>While we have safeguards in place, the system may </br>occasionally generate incorrect or misleading information </br> and produce offensive or biasedcontent. It is not </br>intended to give advice.</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-end modal-footer">
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next</button>
+            <div class="d-flex justify-content-end m-4">
+                <button class="btn btn-primary" id="p" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next</button>
             </div>
         </div>
      </div>
     </div>
-
-          
+         
           <!-- Modal 2 -->
-    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade text-white" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">ChatGPT2</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content bg-dark p-3">
+                <div class="modal- m-4">
+                    <h1 class="modal-title fs-5 p-3 border-bottom border-secondary-subtle" id="exampleModalToggleLabel2 ">ChatGPT<h1>
                 </div>
                 <p class="m-3">How we collect data</p>
-                <div class="modal-body">
+                <div class="modal-body bg-secondary border-dark rounded">
                     <p>Conversations may be reviewed by our AI trainers to improve our systems.</p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body bg-secondary border-dark rounded mt-3">
                     <p>Please don't share any sensitive information in your conversations.</p>
                 </div>
-                <div class="d-flex justify-content-between modal-footer">
-                    <button class="btn btn-primary " data-bs-target="#exampleModalToggleLabel1" data-bs-toggle="modal">Back</button>
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
+                <div class="d-flex justify-content-between m-4">
+                    <button class="btn btn-primary" id="p" data-bs-target="#myModal" data-bs-toggle="modal">Back</button>
+                    <button class="btn btn-primary" id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
                 </div>
             </div>
         </div>
     </div>
 
           <!-- Modal 3 -->
-    <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+    <div class="modal fade text-white" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">ChatGPT3</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content bg-dark p-3">
+                <div class="modal- m-4">
+                    <h1 class="modal-title fs-5 p-3 border-bottom border-secondary-subtle" id="exampleModalToggleLabel2">ChatGPT</h1>
                 </div>
                 <p class="m-3">We'd love you feedback!</p>
-                <div class="modal-body">
+                <div class="modal-body bg-secondary border-dark rounded">
                     <p>This system is optimized for dialogue. Let us know if a particular response was good or unhelpful.</p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body bg-secondary border-dark rounded mt-3">
                     <p>Share your feedback in our <a href="https://discord.com">Discord server.</a></p>
                 </div>
-                <div class="d-flex justify-content-between modal-footer">
-                    <button class="btn btn-primary " data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Back</button>
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Done</button>
+                <div class="d-flex justify-content-between m-4">
+                    <button class="btn btn-primary" id="p" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Back</button>
+                    <button class="btn btn-primary" id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Done</button>
                 </div>
             </div>
         </div>
