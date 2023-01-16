@@ -1,9 +1,24 @@
-var sendBtn = document.querySelector("#send");
-const input = document.querySelector("input");
-var userQuestion = document.querySelector("#userQuestion");
-var insertAnswer = document.querySelector("#answer");
 
-var tab = [
+//Effet hover input
+const input = document.querySelector('#input')
+        let isFocus= ""
+        input.onfocus = (e) => {
+            document.querySelector("#input-container").style.cssText ='background: #434250 !important; box-shadow: 0px 0px 10px #0000004f !important ';
+        } 
+
+        input.onblur = (e) => {
+            document.querySelector("#input-container").style.cssText ='background: #3F3E4A !important'
+        } 
+
+
+// Question / Réponse
+const sendBtn = document.querySelector("#send-btn");
+const homeSection = document.querySelector("#home")
+const QAsection = document.createElement("section")
+QAsection.id = "qa-section"
+document.querySelector('#input-section').before(QAsection)
+
+const tab = [
   { question: "qui a toujours faim ?", answer: "Théo" },
   {
     question:
@@ -44,22 +59,47 @@ var tab = [
       "Il s'agit de la température la plus basse en dessous de laquelle il est impossible de descendre.",
   },
 ];
-
+console.log(tab.length)
 function chatAnswer(e) {
+
   e.preventDefault();
-  if (!userQuestion.value == "") {
-    console.log(userQuestion);
+  // Disparition de la page d'accueil
+  homeSection.style.display = "none"
+
+  // Création de la div container de la question
+  const questionDiv = document.createElement("div");
+  questionDiv.id = "#question"
+  questionDiv.style.cssText = "background : #353440  !important; display: flex; justify-content: space-between; align-items: start"
+  QAsection.appendChild(questionDiv)
+
+  // Création de la div container de la réponse
+  const answerDiv = document.createElement("div");
+  answerDiv.id = "#answer"
+  answerDiv.style.cssText = "background : #4d4b5f !important; display: flex; justify-content: space-between; align-items: start"
+  QAsection.appendChild(answerDiv)
+
+
+  if (!input.value == "") {
+
+    console.log(input);
     for (let i = 0; i < tab.length; i++) {
-      if (userQuestion.value == tab[i].question) {
-        insertAnswer.innerHTML = tab[i].answer;
+      console.log(tab[i].question)
+      if (tab[i].question == input.value) {
+        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">${tab[i].question}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
+
+        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">${tab[i].answer}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
+        break;
       } else {
-        insertAnswer.innerHTML =
-          "Désolé je ne sais pas répondre à votre question";
+        questionDiv.innerHTML = `<p>${tab[i].question}<p>` 
+        answerDiv.innerHTML =
+          `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">Désolé je ne sais pas répondre à votre question</p><div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
       }
     }
   } else {
-    insertAnswer.innerHTML = "Vous n'êtes pas très bavard...";
+    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">...</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">Vous n'êtes pas très bavard...</p><div class="col-1 d-flex justify-content-center border" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>"/>`;
   }
+  input.value = ""
 }
 
 sendBtn.addEventListener("click", chatAnswer);

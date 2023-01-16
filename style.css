@@ -22,6 +22,8 @@ body{
 /* buttons border and title border bottom (modals)*/
 .border-secondary-subtle{
     border-color: #393b3e !important;
+    color: #4d4b5f ;
+    color: #272727;
 }
 
 /*---------- Police ----------*/
