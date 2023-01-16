@@ -12,21 +12,37 @@
 </head>
     <!-- <div class="text-light bg-white bg-opacity-50">-</div>
     <div class="text-light bg-white bg-opacity-25">-</div> -->
-    <body class="d-flex bg-primary vh-100 text-white" style="min-width: 390px;">
-        
-        <!-- MENU -->
-        <nav class="d-none d-md-block col-md-4 col-xl-3 col-xxl-2 min-vh-100 bg-dark">
-            MENU
-        </nav>
+    <body class="position-relative d-flex bg-dark text-white" style="min-width: 370px;">
+        <!-- SIDE MENU (OFFCANVAS)-->
+    <nav id="navbar" class="navbar navbar-expand-md vh-100 col-md-3 col-xl-2">
+        <div class="offcanvas offcanvas-bg-color offcanvas-start text-bg-dark w-75" data-bs-backdrop="static" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
+            <div class="offcanvas-header position-absolute end-0 d-md-none">
+                <button type="button" class="position-absolute rounded-0 btn-close btn-close-white p-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between vh-100 p-0">
+                <div id="newChatBtn" class="p-2">
+                    <a href="./index.html" class="d-flex align-items-center text-white btn btn-outline-secondary w-100 d-flex col-align-self-start m-0"><span class="fs-4 ms-1 me-3">+</span><span class="fs-6">New chat</span></a>
+                </div>
+                <div id="links" class="w-100 p-2">  
+                    <hr class="bg-danger border-2 border-top border-dark-subtle"> 
+                    <a class="btn btn-dark d-flex col-align-self-start" href="./help.html" role="button"><i class="bi bi-question-square pe-2"></i>Help</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-moon pe-2"></i>Dark mode</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-discord pe-2"></i>OpenAI Discord</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-box-arrow-up-right pe-2"></i>Updates & FAQ</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-box-arrow-right pe-2"></i>Log out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
         <!-- HOME -->
-        <main class="position-relative col-12 col-md-8 col-xl-9 col-xxl-10 d-flex flex-column justify-content-center">
+        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column">  
             <section id="home" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mb-5">
 
-                <h1 class="text-start text-md-center m-5 fw-bold">Help</h1>
+                <h1 class="text-md-center m-5 fw-bold"><i class="bi bi-question-square pe-2"></i>Help</h1>
                 <!-- Icone interrogation <i class="bi bi-question-square"></i> -->
-                <p class="fs-6 my-3 d-flex justify-content-evenly text-center">We've trained a model called ChatGPT which interacts in a conversational </br> way. The dialogue format makes it possible for ChatGPT to answer followup</br> questions, admit its mistakes, challenge incorrect premises, and reject</br> inappropriate requests.</p>
-                <p class="fs-6 my-3 d-flex justify-content-evenly text-center">This is a beta version of chatGPT AI, so for the moment you can ask him only</br> 9 questions.</p>
+                <p class="text-white-50 fs-7 my-3 d-flex justify-content-evenly text-center">We've trained a model called ChatGPT which interacts in a conversational </br> way. The dialogue format makes it possible for ChatGPT to answer followup</br> questions, admit its mistakes, challenge incorrect premises, and reject</br> inappropriate requests.</p>
+                <p class="text-white-50 fs-7 my-3 d-flex justify-content-evenly text-center">This is a beta version of chatGPT AI, so for the moment you can ask him only</br> 9 questions.</p>
                 <h5 class="fs-4 my-3 d-flex justify-content-evenly text-center">Questions</h5>
                 <div class="d-flex justify-content-evenly text-center fs-7">
                     <div class="d-flex flex-column col-4 mb-5">  

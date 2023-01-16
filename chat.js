@@ -69,13 +69,13 @@ function chatAnswer(e) {
   // Création de la div container de la question
   const questionDiv = document.createElement("div");
   questionDiv.id = "#question"
-  questionDiv.style.cssText = "background : #353440  !important; display: flex; justify-content: space-between; align-items: start"
+  questionDiv.style.cssText = "background : #353540  !important; display: flex; justify-content: space-between; align-items: start; font-size: 20px !important"
   QAsection.appendChild(questionDiv)
 
   // Création de la div container de la réponse
   const answerDiv = document.createElement("div");
   answerDiv.id = "#answer"
-  answerDiv.style.cssText = "background : #4d4b5f !important; display: flex; justify-content: space-between; align-items: start"
+  answerDiv.style.cssText = "background : #444653 !important; display: flex; justify-content: space-between; align-items: start"
   QAsection.appendChild(answerDiv)
 
 
@@ -85,21 +85,35 @@ function chatAnswer(e) {
     for (let i = 0; i < tab.length; i++) {
       console.log(tab[i].question)
       if (tab[i].question == input.value) {
-        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">${tab[i].question}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
-
-        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">${tab[i].answer}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
+        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].question}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].answer}</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
         break;
       } else {
-        questionDiv.innerHTML = `<p>${tab[i].question}<p>` 
-        answerDiv.innerHTML =
-          `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">Désolé je ne sais pas répondre à votre question</p><div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
+        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">Désolé je ne sais pas répondre à votre question</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
       }
     }
   } else {
-    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">...</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>`;
-    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div><p class="col-10">Vous n'êtes pas très bavard...</p><div class="col-1 d-flex justify-content-center border" ><img height="18px" width="18px" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png"/></div>"/>`;
+    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">Vous n'êtes pas très bavard...</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
   }
   input.value = ""
 }
 
 sendBtn.addEventListener("click", chatAnswer);
+
+
+// if (tab[i].question == input.value) {
+//   questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${tab[i].question}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
+//   answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${tab[i].answer}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
+//   break;
+// } else {
+//   questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${input.value}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`
+//   answerDiv.innerHTML =
+//     `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="class="col-10 px-4 px-lg-5 py-4 py-lg-5">Désolé je ne sais pas répondre à votre question</p><div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
+// }
+// }
+// } else {
+// questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0 py-3"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 fs-6 border">...</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
+// answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0 py-3" ><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 fs-6 border">Vous n'êtes pas très bavard...</p><div class="col-1 d-flex justify-content-center border" ><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>"`;
+// }
