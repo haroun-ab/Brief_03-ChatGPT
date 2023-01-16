@@ -1,7 +1,10 @@
 var sendBtn = document.querySelector("#send");
-const input = document.querySelector("input");
 var userQuestion = document.querySelector("#userQuestion");
 var insertAnswer = document.querySelector("#answer");
+var grootBox = document.querySelector("#grootBox");
+var punctuation = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
+var random = Math.floor(Math.random() * punctuation.length);
+var randomValue = punctuation[random];
 
 var tab = [
   { question: "qui a toujours faim ?", answer: "Théo" },
@@ -25,7 +28,7 @@ var tab = [
     question:
       "Envoie-moi un lien vers le top 10 des plus grands joueurs de foot de l'histoire.",
     answer:
-      "Bien sûr, voici le lien que tu demandes : https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/",
+      'Bien sûr, voici le lien que tu demandes : <a href="https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/"> Les meilleurs joueurs <a>',
   },
   {
     question:
@@ -47,18 +50,22 @@ var tab = [
 
 function chatAnswer(e) {
   e.preventDefault();
-  if (!userQuestion.value == "") {
-    console.log(userQuestion);
-    for (let i = 0; i < tab.length; i++) {
-      if (userQuestion.value == tab[i].question) {
-        insertAnswer.innerHTML = tab[i].answer;
-      } else {
-        insertAnswer.innerHTML =
-          "Désolé je ne sais pas répondre à votre question";
-      }
-    }
+  if (grootBox.checked) {
+    insertAnswer.innerHTML = "Je suis Groot" + randomValue;
   } else {
-    insertAnswer.innerHTML = "Vous n'êtes pas très bavard...";
+    if (!userQuestion.value == "") {
+      for (let i = 0; i < tab.length; i++) {
+        if (userQuestion.value == tab[i].question) {
+          insertAnswer.innerHTML = tab[i].answer;
+          break;
+        } else {
+          insertAnswer.innerHTML =
+            "Désolé je ne sais pas répondre à votre question";
+        }
+      }
+    } else {
+      insertAnswer.innerHTML = "Vous n'êtes pas très bavard...";
+    }
   }
 }
 
