@@ -38,8 +38,8 @@
             </div>
         </div>
     </nav>
-        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column">  
-            <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle mb-sm-5">
+        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-between vh-100">  
+            <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle">
                 <div id="headerbtn1">
                     <button type="button" class="btn btn-lg text-white py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
                         <i class="bi bi-list fs-2"></i>
@@ -100,7 +100,7 @@
             </section>
 
             <!-- INPUT -->
-            <section id="input-section" class="position-absolute bottom-0 start-50 translate-middle-x d-flex flex-column col-11 mx-auto">
+            <section id="input-section" class="border d-flex align-items-center flex-column mx-auto" style="height:20vh">
                 <div id="input-container" class="d-flex align-self-center justify-content-between col-12 col-lg-9 col-xl-8 border-0 rounded-3 bg-secondary-subtle shadow bs-1 p-1">
                     <input id="input" class="col-11 border-0 h-100 text-light bg-dark bg-transparent fs-6 p-1 p-md-2 border-0">                    
                     <div class="col-1 d-flex ps-0 ps-sm-3 ">
@@ -109,10 +109,17 @@
                                 <path id="Path_8370" data-name="Path 8370" d="M163.3,94.537,23.2,36.4A16.767,16.767,0,0,0,.529,56.035L13,104.936H74.053a5.087,5.087,0,0,1,0,10.175H13l-12.47,48.9A16.768,16.768,0,0,0,23.2,183.643l140.1-58.132a16.767,16.767,0,0,0,0-30.974Z" transform="translate(-0.001 -35.111)"/>
                             </svg>
                         </button>
+                        
+                    </div>
+                    <div class="form-check form-switch col-1 ms-3" style="width: fit-content;">
+                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" id="grootBox">
+                        <label class="border form-check-label" for="grootBox" >Groot mode</label>
                     </div>
                 </div>
                 <p class="col-12 text-white-50 m-1 m-lg-2 text-center" style="font-size:13px"><span class="text-decoration-underline">ChatGPT Dec 15 Version</span>. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.</p>
+
             </section>
+            
         </main>
 
           <!-- Modal 1 -->
@@ -165,9 +172,10 @@
                                 <p class="m-auto">Please don't share any sensitive information in your conversations.</p>
                             </div>
                        </div>
-                       <div class="d-flex justify-content-between pb-5 px-3 pt-1">
-                            <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle" id="p" data-bs-target="#myModal" data-bs-toggle="modal">Back</button>
-                            <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle ms-2" id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
+
+                       <div class="d-flex justify-content-between pb-5 px-3 pt-1" >
+                        <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle" id="p" data-bs-target="#myModal" data-bs-toggle="modal">Back</button>
+                        <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle ms-2" id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
                        </div>
                    </div>
                 </div>
