@@ -1,4 +1,3 @@
-
 //Effet hover input
 const input = document.querySelector('#input')
         let isFocus= ""
@@ -17,6 +16,12 @@ const homeSection = document.querySelector("#home")
 const QAsection = document.createElement("section")
 QAsection.id = "qa-section"
 document.querySelector('#input-section').before(QAsection)
+
+// Groot
+var grootBox = document.querySelector("#grootBox");
+var punctuation = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
+var random = Math.floor(Math.random() * punctuation.length);
+var randomValue = punctuation[random];
 
 const tab = [
   { question: "Qui a toujours faim ?", answer: "Théo" },
@@ -78,7 +83,9 @@ function chatAnswer(e) {
   answerDiv.style.cssText = "background : #444653 !important; display: flex; justify-content: space-between; align-items: start"
   QAsection.appendChild(answerDiv)
 
-
+  if (grootBox.checked) {
+    ansxerDiv.innerHTML = "Je suis Groot" + randomValue;
+  } else {
   if (!input.value == "") {
 
     console.log(input);
@@ -99,21 +106,5 @@ function chatAnswer(e) {
   }
   input.value = ""
 }
-
+}
 sendBtn.addEventListener("click", chatAnswer);
-
-
-// if (tab[i].question == input.value) {
-//   questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${tab[i].question}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
-//   answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${tab[i].answer}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
-//   break;
-// } else {
-//   questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 py-lg-5">${input.value}</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`
-//   answerDiv.innerHTML =
-//     `<div class="col-1 d-flex justify-content-end border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="class="col-10 px-4 px-lg-5 py-4 py-lg-5">Désolé je ne sais pas répondre à votre question</p><div class="col-1 d-flex justify-content-center border m-0" ><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
-// }
-// }
-// } else {
-// questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0 py-3"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 fs-6 border">...</p><div class="col-1 d-flex justify-content-center border m-0"><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>`;
-// answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end border m-0 py-3" ><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 fs-6 border">Vous n'êtes pas très bavard...</p><div class="col-1 d-flex justify-content-center border" ><img height="18px" width="18px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div>"`;
-// }
