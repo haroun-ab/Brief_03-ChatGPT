@@ -19,7 +19,7 @@ QAsection.id = "qa-section"
 document.querySelector('#input-section').before(QAsection)
 
 const tab = [
-  { question: "qui a toujours faim ?", answer: "Théo" },
+  { question: "Qui a toujours faim ?", answer: "Théo" },
   {
     question:
       "Ma soeur avait la moitié de mon âge quand j'avais 20 ans. J'ai maintenant 40 ans. Quel âge a ma soeur ?",
