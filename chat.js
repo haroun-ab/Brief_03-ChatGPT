@@ -15,13 +15,17 @@ const sendBtn = document.querySelector("#send-btn");
 const homeSection = document.querySelector("#home")
 const QAsection = document.createElement("section")
 QAsection.id = "qa-section"
+QAsection.style.cssText = "height:80vh; overflow: scroll"
 document.querySelector('#input-section').before(QAsection)
+let punctuation = 0
 
-// Groot
-var grootBox = document.querySelector("#grootBox");
-var punctuation = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
-var random = Math.floor(Math.random() * punctuation.length);
-var randomValue = punctuation[random];
+function randomV(){
+  var punctuations = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
+  var random = Math.floor(Math.random() * punctuations.length);
+  var randomValue = punctuations[random];
+  punctuation = randomValue 
+  return punctuation
+}
 
 const tab = [
   { question: "Qui a toujours faim ?", answer: "Théo" },
@@ -65,6 +69,7 @@ const tab = [
   },
 ];
 console.log(tab.length)
+
 function chatAnswer(e) {
 
   e.preventDefault();
@@ -84,7 +89,13 @@ function chatAnswer(e) {
   QAsection.appendChild(answerDiv)
 
   if (grootBox.checked) {
-    ansxerDiv.innerHTML = "Je suis Groot" + randomValue;
+    // Groot
+    
+    randomV()
+   
+    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${"Je suis Groot" + punctuation}</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
+    input.value = ""
   } else {
   if (!input.value == "") {
 
