@@ -1,13 +1,34 @@
-var sendBtn = document.querySelector("#send");
-var userQuestion = document.querySelector("#userQuestion");
-var insertAnswer = document.querySelector("#answer");
-var grootBox = document.querySelector("#grootBox");
-var punctuation = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
-var random = Math.floor(Math.random() * punctuation.length);
-var randomValue = punctuation[random];
+//Effet hover input
+const input = document.querySelector('#input')
+        let isFocus= ""
+        input.onfocus = (e) => {
+            document.querySelector("#input-container").style.cssText ='background: #434250 !important; box-shadow: 0px 0px 10px #0000004f !important ';
+        } 
 
-var tab = [
-  { question: "qui a toujours faim ?", answer: "Théo" },
+        input.onblur = (e) => {
+            document.querySelector("#input-container").style.cssText ='background: #3F3E4A !important'
+        } 
+
+
+// Question / Réponse
+const sendBtn = document.querySelector("#send-btn");
+const homeSection = document.querySelector("#home")
+const QAsection = document.createElement("section")
+QAsection.id = "qa-section"
+QAsection.style.cssText = "height:80vh; overflow: scroll"
+document.querySelector('#input-section').before(QAsection)
+let punctuation = 0
+
+function randomV(){
+  var punctuations = ["!", "?", "!!!", "?!", ".", "...", "?????", "!!!!!!!!!"];
+  var random = Math.floor(Math.random() * punctuations.length);
+  var randomValue = punctuations[random];
+  punctuation = randomValue 
+  return punctuation
+}
+
+const tab = [
+  { question: "Qui a toujours faim ?", answer: "Théo" },
   {
     question:
       "Ma soeur avait la moitié de mon âge quand j'avais 20 ans. J'ai maintenant 40 ans. Quel âge a ma soeur ?",
@@ -28,7 +49,7 @@ var tab = [
     question:
       "Envoie-moi un lien vers le top 10 des plus grands joueurs de foot de l'histoire.",
     answer:
-      'Bien sûr, voici le lien que tu demandes : <a href="https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/"> Les meilleurs joueurs <a>',
+      "Bien sûr, voici le lien que tu demandes : https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/",
   },
   {
     question:
@@ -47,26 +68,52 @@ var tab = [
       "Il s'agit de la température la plus basse en dessous de laquelle il est impossible de descendre.",
   },
 ];
+console.log(tab.length)
 
 function chatAnswer(e) {
   e.preventDefault();
+  // Disparition de la page d'accueil
+  homeSection.style.display = "none"
+
+  // Création de la div container de la question
+  const questionDiv = document.createElement("div");
+  questionDiv.id = "#question"
+  questionDiv.style.cssText = "background : #353540  !important; display: flex; justify-content: space-between; align-items: start; font-size: 20px !important"
+  QAsection.appendChild(questionDiv)
+
+  // Création de la div container de la réponse
+  const answerDiv = document.createElement("div");
+  answerDiv.id = "#answer"
+  answerDiv.style.cssText = "background : #444653 !important; display: flex; justify-content: space-between; align-items: start"
+  QAsection.appendChild(answerDiv)
+
   if (grootBox.checked) {
-    insertAnswer.innerHTML = "Je suis Groot" + randomValue;
+    // Groot
+    
+    randomV()
+   
+    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${"Je suis Groot" + punctuation}</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
+    input.value = ""
   } else {
-    if (!userQuestion.value == "") {
-      for (let i = 0; i < tab.length; i++) {
-        if (userQuestion.value == tab[i].question) {
-          insertAnswer.innerHTML = tab[i].answer;
-          break;
-        } else {
-          insertAnswer.innerHTML =
-            "Désolé je ne sais pas répondre à votre question";
-        }
+  if (!input.value == "") {
+
+    console.log(input);
+    for (let i = 0; i < tab.length; i++) {
+      console.log(tab[i].question)
+      if (tab[i].question == input.value) {
+        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].question}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].answer}</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
+        break;
+      } else {
+        questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+        answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">Désolé je ne sais pas répondre à votre question</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
       }
-    } else {
-      insertAnswer.innerHTML = "Vous n'êtes pas très bavard...";
     }
+  } else {
+    questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">Vous n'êtes pas très bavard...</p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
   }
 }
-
+}
 sendBtn.addEventListener("click", chatAnswer);
