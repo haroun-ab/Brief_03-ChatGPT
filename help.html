@@ -14,11 +14,27 @@
     <div class="text-light bg-white bg-opacity-25">-</div> -->
     <body class="d-flex bg-primary vh-100 text-white" style="min-width: 390px;">
         
-        <!-- MENU -->
-        <nav class="d-none d-md-block col-md-4 col-xl-3 col-xxl-2 min-vh-100 bg-dark">
-            MENU
-        </nav>
-
+           <!-- SIDE MENU (OFFCANVAS)-->
+    <nav id="navbar" class="bg-dark navbar navbar-expand-md vh-100 col-md-3 col-xl-2">
+        <div class="offcanvas offcanvas-bg-color offcanvas-start text-bg-dark w-75" data-bs-backdrop="static" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
+            <div class="offcanvas-header position-absolute end-0 d-md-none">
+                <button type="button" class="position-absolute rounded-0 btn-close btn-close-white p-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between vh-100 p-0">
+                <div id="newChatBtn" class="p-2">
+                    <a href="index.html" class="d-flex align-items-center text-white btn btn-outline-secondary w-100 d-flex col-align-self-start m-0"><span class="fs-4 ms-1 me-3">+</span><span class="fs-6">New chat</span></a>
+                </div>
+                <div id="links" class="w-100 p-2">  
+                    <hr class="bg-danger border-2 border-top border-dark-subtle"> 
+                    <a class="btn btn-dark d-flex col-align-self-start" href="help.html" role="button"><i class="bi bi-question-square pe-2"></i>Help</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-moon pe-2"></i>Dark mode</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-discord pe-2"></i>OpenAI Discord</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-box-arrow-up-right pe-2"></i>Updates & FAQ</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-box-arrow-right pe-2"></i>Log out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
         <!-- HOME -->
 
         <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-around">  
@@ -47,7 +63,7 @@
                 <div class="d-flex justify-content-evenly text-center fs-7">
                     <div class="d-flex flex-column col-4 mb-5">  
                         <div class="d-inline bg-secondary-subtle m-1 m-md-2 rounded-3 px-1 px-sm-2 py-3">
-                            Qui a toujours faim? 
+                            Qui a toujours faim ? 
                             <!--Théo -->
                         </div>
                         <div class="d-inline bg-secondary-subtle m-1 m-md-2 rounded-3 px-1 px-sm-2 py-3">
@@ -69,7 +85,7 @@
                             <!-- Recette / liste -->
                         </div>
                         <div class="d-inline bg-secondary-subtle m-1 m-md-2 rounded-3 px-1 px-sm-2  py-3">
-                            Envoie-moi un lien vers le top 10 des plus grands joueurs de foot de l'histoire
+                            Envoie-moi un lien vers le top 10 des plus grands joueurs de foot de l'histoire.
                             <!-- Lien -->                 
                         </div>
                     </div>
@@ -83,7 +99,7 @@
                             <!--A au carré + B au carré = hypoténuse au carré. Faire un shéma ou une image? -->
                         </div>
                         <div class="d-inline bg-secondary-subtle m-1 m-md-2 rounded-3 px-1 px-sm-2 py-3">
-                            C'est quoi le zéro absolu?
+                            C'est quoi le zéro absolu ?
                             <!-- Température la plus basse en dessous de laquelle il est impossible de descendre. -->
                         </div>
                     </div>
