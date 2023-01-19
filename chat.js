@@ -165,5 +165,5 @@ function chatAnswer(e) {
   input.value = ""
 }
 
-}
+
 sendBtn.addEventListener("click", chatAnswer);
