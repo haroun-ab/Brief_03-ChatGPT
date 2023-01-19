@@ -161,6 +161,7 @@ function chatAnswer(e) {
         .pauseFor(2500)
         .start();
     }
+    
   }
   input.value = ""
 }
