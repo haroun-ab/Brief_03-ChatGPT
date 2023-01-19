@@ -22,8 +22,6 @@ body{
 /* buttons border and title border bottom (modals)*/
 .border-secondary-subtle{
     border-color: #393b3e !important;
-    color: #4d4b5f ;
-    color: #272727;
 }
 
 /*---------- Police ----------*/
@@ -45,6 +43,8 @@ p, #p{
 .shadow-lg{
     box-shadow: 0 1rem 1rem #2b2b2b !important;
 }
+
+
 
 /*----------- Buttons -----------*/
 
@@ -80,13 +80,6 @@ input{
 }
 
 /*------------- Hover --------------*/
-
-.bi-send-fill:hover{
-    color :#dadada !important;
-    transform: scale(1.55) !important;
-    transition: 300ms;
-} 
-
 .btn.bg-dark-subtle:hover{
     background: #353440 !important;
 }
@@ -106,5 +99,6 @@ input{
   #qa-section i:hover{
     color: white;
     cursor: pointer;
-    transition: 400ms;
+    transition: 200ms;
   }
+
