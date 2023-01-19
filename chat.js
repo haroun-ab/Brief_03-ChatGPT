@@ -62,7 +62,7 @@ const tab = [
   {
     question: "Quelle guerre a été la plus meurtrière entre la première et la deuxième guerre mondiale ?",
     answer:
-      "La Seconde Guerre mondiale fut le conflit le plus meurtrier de l'Histoire avec plus de 60 millions de morts soit 2,5% de la population mondiale de l'époque dont la majorité fut des civils. Les tableaux suivants détaillent les pertes de chaque pays.Globalement, les estimations des historiens varient de 50 millions à 85 millions de morts. Ces valeurs ne prennent pas en considération les morts de carences, privations, de suites de blessures, ou autres maladies consécutives au conflit, après mai 1945, en Europe, et septembre 1945, en Asie. ",
+      "La Seconde Guerre mondiale fut le conflit le plus meurtrier de l'Histoire avec plus de 60 millions de morts soit 2,5% de la population mondiale de l'époque dont la majorité fut des civils. Globalement, les estimations des historiens varient de 50 millions à 85 millions de morts. Ces valeurs ne prennent pas en considération les morts de carences, privations, de suites de blessures, ou autres maladies consécutives au conflit, après mai 1945, en Europe, et septembre 1945, en Asie. ",
   },
   {
     question: "Comment calculer l'hypoténuse ?",
