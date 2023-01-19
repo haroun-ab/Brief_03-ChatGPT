@@ -31,7 +31,7 @@ function randomPunctuation() {
 }
 
 const tab = [
-  { question: "Qui a toujours faim ?", answer: "Théo" },
+  { question: "Qui a toujours faim ?", answer: "Théo." },
   {
     question:
       "Ma soeur avait la moitié de mon âge quand j'avais 20 ans. J'ai maintenant 40 ans. Quel âge a ma soeur ?",
@@ -42,7 +42,7 @@ const tab = [
     question: "Quelle est la température du zéro absolu ?",
     answer: "Le zéro absolu correspond à -273,15 degrés celsius ou 0 kelvin.",
   },
-  { question: "Qui a toujours une blague en tête ?", answer: "Vianney" },
+  { question: "Qui a toujours une blague en tête ?", answer: "Vianney." },
 
   {
     question: "Quelle est la recette du tiramisu ?",
@@ -53,7 +53,7 @@ const tab = [
     question:
       "Envoie-moi un lien vers le top 10 des plus grands joueurs de foot de l'histoire.",
     answer:
-      "Bien sûr, voici le lien que tu demandes : https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/",
+      "Bien sûr, voici le lien que tu demandes : <a href='https://www.lequotidiendusport.fr/classement-les-dix-meilleurs-joueurs-de-tous-les-temps/'>les dix meilleurs joueurs </a>.",
   },
   {
     question:
@@ -64,7 +64,7 @@ const tab = [
   {
     question: "Comment calculer l'hypoténuse ?",
     answer:
-      "A au carré + B au carré = hypoténuse au carré. Faire un shéma ou une image?",
+      "L’hypoténuse est le côté opposé à l’angle droit dans un triangle rectangle. Selon le théorème de Pythagore, si un triangle est rectangle, alors le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés. Soit le triangle ABC rectangle en A: BC au carré = AB au carré + AC au carré. L'hypoténuse sera donc la racine carrée de BC.",
   },
   {
     question: "C'est quoi le zéro absolu ?",
@@ -102,20 +102,22 @@ function chatAnswer(e) {
     if (!input.value == "") {
       questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
       answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="groot${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-      var typewriter = new Typewriter(`#groot${numberDiv}`);
+      var typewriter = new Typewriter(`#groot${numberDiv}`, {
+        cursor: "",
+      });
       typewriter
         .changeDelay(90)
         .typeString(`Je suis Groot ${punctuation}`)
-        .pauseFor(2500)
         .start();
     } else {
       questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p  class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
       answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="groot${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-      var typewriter = new Typewriter(`#groot${numberDiv}`);
+      var typewriter = new Typewriter(`#groot${numberDiv}`, {
+        cursor: "",
+      });
       typewriter
         .changeDelay(90)
         .typeString(`Je suis Groot ${punctuation}`)
-        .pauseFor(2500)
         .start();
     }
     input.value = "";
@@ -128,33 +130,33 @@ function chatAnswer(e) {
           questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].question}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
           answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="answer${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
           // Typewriter
-          var typewriter = new Typewriter(`#answer${numberDiv}`);
+          var typewriter = new Typewriter(`#answer${numberDiv}`, {
+            cursor: "",
+          });
 
-          typewriter
-            .changeDelay(90)
-            .typeString(tab[i].answer)
-            .pauseFor(2500)
-            .start();
+          typewriter.changeDelay(90).typeString(tab[i].answer).start();
           break;
         } else {
           questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
           answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="sorry${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-          var typewriter = new Typewriter(`#sorry${numberDiv}`);
+          var typewriter = new Typewriter(`#sorry${numberDiv}`, {
+            cursor: "",
+          });
           typewriter
             .changeDelay(90)
             .typeString("Désolé, je ne sais pas répondre à votre question.")
-            .pauseFor(2500)
             .start();
         }
       }
     } else {
       questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
       answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="empty${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-      var typewriter = new Typewriter(`#empty${numberDiv}`);
+      var typewriter = new Typewriter(`#empty${numberDiv}`, {
+        cursor: "",
+      });
       typewriter
         .changeDelay(90)
         .typeString("Vous n'êtes pas très bavard...")
-        .pauseFor(2500)
         .start();
     }
 
