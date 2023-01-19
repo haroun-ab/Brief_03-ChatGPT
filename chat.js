@@ -126,3 +126,55 @@ function chatAnswer(e) {
 }
 }
 sendBtn.addEventListener("click", chatAnswer);
+
+
+
+
+
+// thumbs-up thumbs-down Class
+
+let thumbsUp = document.querySelector(".thumbsUp");
+let thumbsDown = document.querySelectorAll(".thumbsDown");
+
+// Script
+
+let btnUp = false;
+let btnDown = false;
+
+console.log(thumbsUp);
+function up(){
+  if( td == false){
+    //style devient vert;
+    thumbsUp.style.cssText = "color: green !important";
+    btnUp = true;
+
+  }else{
+    //style devient vert;
+    thumbsUp.style.cssText = "color: green !important";
+    //style down display none;
+    thumbsDown.style.cssText = "display: none !important";
+    btnDown = false;
+    btnUp = true;
+  }
+}
+// thumbs-up
+thumbsUp.addEventListener("click", up);
+
+//thumbs-down
+
+function down(){
+  if(btnUp == false){
+    //style devient rouge;
+    thumbsDown.style.cssText = "color: red !important";
+    btnDown = true;
+  }else{
+    //style devient rouge;
+    thumbsDown.style.cssText = "color: red !important";
+    //style Up display none;
+    thumbsUp.style.cssText = "display: none !important";
+    btnUp = false;
+    btnDown = true;
+  }
+}
+
+thumbsDown.addEventListener("click", down());
