@@ -80,13 +80,6 @@ input{
 }
 
 /*------------- Hover --------------*/
-
-.bi-send-fill:hover{
-    color :#dadada !important;
-    transform: scale(1.55) !important;
-    transition: 300ms;
-} 
-
 .btn.bg-dark-subtle:hover{
     background: #353440 !important;
 }
@@ -101,5 +94,11 @@ input{
         z-index: 2;
         top: 0;
     }
+  }
+
+  #qa-section i:hover{
+    color: white;
+    cursor: pointer;
+    transition: 200ms;
   }
 
