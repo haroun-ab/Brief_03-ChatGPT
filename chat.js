@@ -1,14 +1,12 @@
-
-
 //Effet hover input
 const input = document.querySelector("#input");
 let isFocus = "";
-input.onfocus = (e) => {
+input.onfocus = () => {
   document.querySelector("#input-container").style.cssText =
     "background: #434250 !important; box-shadow: 0px 0px 10px #0000004f !important ";
 };
 
-input.onblur = (e) => {
+input.onblur = () => {
   document.querySelector("#input-container").style.cssText =
     "background: #3F3E4A !important";
 };
@@ -48,7 +46,6 @@ const tab = [
    answer:
     "Vianney"
   },
-
   {
     question: "Quelle est la recette du tiramisu ?",
     answer:
@@ -76,12 +73,13 @@ const tab = [
   },
 ];
 
-console.log(tab.length)
+
 
 function chatAnswer(e) {
   e.preventDefault();
   // Disparition de la page d'accueil
   homeSection.style.display = "none";
+
 
   // Création de la div container de la question (modif : className au lieu d'id = pour pouvoir compter les div)
   const questionDiv = document.createElement("div");
@@ -89,7 +87,8 @@ function chatAnswer(e) {
   questionDiv.style.cssText =
     "background : #353540  !important; display: flex; justify-content: space-between; align-items: start; font-size: 20px !important";
   QAsection.appendChild(questionDiv);
-  // variable qui compte les div question pour pvr faire une boucle avec au moment de la création des div réponses, et ne pas les faire se répéter avec la boucle du tableau des questions/réponses
+
+  // Variable qui compte les div question pour pvr faire une boucle avec au moment de la création des div réponses, et ne pas les faire se répéter avec la boucle du tableau des questions/réponses
   numberDiv = document.querySelectorAll(".question").length;
 
   // Création de la div container de la réponse
@@ -99,72 +98,125 @@ function chatAnswer(e) {
     "background : #444653 !important; display: flex; justify-content: space-between; align-items: start";
   QAsection.appendChild(answerDiv);
 
+  sendBtn.addEventListener("click", function(){
+    const topDiv = document.querySelector('#top')
+    topDiv.scrollTop = topDiv.offsetHeight;
+  });
+
+  
   // Groot
   if (grootBox.checked) {  
     randomPunctuation()
     if (!input.value == "") {
     questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
     answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="groot${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-      var typewriter = new Typewriter(`#groot${numberDiv}`);
+      var typewriter = new Typewriter(`#groot${numberDiv}`, {
+        cursor : ""
+       });
     typewriter
-      .changeDelay(90)
-      .typeString(`Je suis Groot ${punctuation}`)
-      .pauseFor(2500)
+      .changeDelay(50)
+      .typeString(`Je s'appelle Groot ${punctuation}`)
       .start();
+      
     } else {
       questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p  class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
       answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="groot${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-      var typewriter = new Typewriter(`#groot${numberDiv}`);
+      var typewriter = new Typewriter(`#groot${numberDiv}` , {
+        cursor : ""
+       });
     typewriter
-      .changeDelay(90)
-      .typeString(`Je suis Groot ${punctuation}`)
-      .pauseFor(2500)
+      .changeDelay(50)
+      .typeString(`Je s'appelle Groot ${punctuation}`)
       .start();
     }
     input.value = ""
   } else {
   if (!input.value == "") 
   {
-    console.log(input);
+
     for (let i = 0; i < tab.length; i++) {
-      console.log(tab[i].question)
       if (tab[i].question == input.value) {
         questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${tab[i].question}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
         answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="answer${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
         // Typewriter
-          var typewriter = new Typewriter(`#answer${numberDiv}`);
+          var typewriter = new Typewriter(`#answer${numberDiv}`, {
+            cursor : ""
+           });
 
           typewriter
-            .changeDelay(90)
+            .changeDelay(50)
             .typeString(tab[i].answer)
-            .pauseFor(2500)
             .start();
         break;
       } else {
         questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">${input.value}</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
         answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="sorry${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-         var typewriter = new Typewriter(`#sorry${numberDiv}`);
+         var typewriter = new Typewriter(`#sorry${numberDiv}`, {
+          cursor : ""
+         });
           typewriter
-            .changeDelay(90)
+            .changeDelay(50)
             .typeString("Désolé, je ne sais pas répondre à votre question.")
-            .pauseFor(2500)
             .start();
       }
     }
   } else {
     questionDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://i.pinimg.com/474x/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6">...</p><div class="col-2 col-sm-1 d-flex m-0 justify-content-start text-white-50 py-4 fs-7 ps-2"><i class="bi bi-pencil-square"></i></div>`;
-    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="empty${numberDiv}"></p><div class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
-   var typewriter = new Typewriter(`#empty${numberDiv}`);
+    answerDiv.innerHTML = `<div class="col-1 d-flex justify-content-end m-0 py-4"><img class="rounded-1" height="25px" width="25px" src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D"/></div><p class="col-9 col-sm-10 px-4 px-lg-5 py-4 m-0 mt-1 fs-6" id="empty${numberDiv}"></p><div id="thumbs-div" class="col-2 col-sm-1 d-flex justify-content-start text-white-50 py-4"><i class="bi bi-hand-thumbs-up p-0 p-sm-1"></i><i class="bi bi-hand-thumbs-down p-0 p-sm-1 ps-1"></i></div>`;
+   var typewriter = new Typewriter(`#empty${numberDiv}`, {
+    cursor : ""
+   });
       typewriter
-        .changeDelay(90)
+        .changeDelay(50)
         .typeString("Vous n'êtes pas très bavard...")
-        .pauseFor(2500)
-        .start();
+        .start()
     }
-    
   }
+
+  let btnUp = false;
+  let btnDown = false;
+
+  const thumbsUp =  answerDiv.childNodes[2].childNodes[0]
+  thumbsUp.onclick = () => {
+
+    if(btnDown == true){
+      btnUp = true;
+      thumbsUp.style.cssText = "color: lightgreen !important"
+      btnDown = false;
+      thumbsDown.style.cssText = ""
+    } else if(btnUp == true){
+      btnUp = false;
+      thumbsUp.style.cssText = "" 
+    } else {
+      btnUp = true;
+      console.log('like')
+      thumbsUp.style.cssText = "color: lightgreen !important" 
+    }
+  }
+
+  const thumbsDown =  answerDiv.childNodes[2].childNodes[1]
+  thumbsDown.onclick = () => {
+    console.log("down")
+    if(btnUp == true){
+      btnDown = true;
+      thumbsDown.style.cssText = "color: red !important"
+      btnUp = false;
+      thumbsUp.style.cssText = ""
+    } else if(btnDown == true){
+      btnDown = false;
+      thumbsDown.style.cssText = "" 
+    } else {
+      btnDown = true;
+      thumbsDown.style.cssText = "color: red !important"
+    }
+  }
+
   input.value = ""
-}
+  }
 
+  sendBtn.addEventListener("click", chatAnswer);
 
-sendBtn.addEventListener("click", chatAnswer);
+  // Supprimer les console.log()
+  // Afficher la réponse en mettant le scroll au plus bas
+  // Terminer les boutons likes
+

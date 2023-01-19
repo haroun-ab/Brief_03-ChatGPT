@@ -88,17 +88,27 @@ input{
     background-color: #67687aaf;
 }
 
-  @media(min-width:768px){
+@media(min-width:768px){
     #navbar{
         position: sticky;
         z-index: 2;
         top: 0;
     }
-  }
+}
 
-  #qa-section i:hover{
+#qa-section i:hover{
     color: white;
     cursor: pointer;
     transition: 200ms;
-  }
+}
+
+
+/*Boutons like et dislike*/
+
+.bi-hand-thumbs-up:active,
+.bi-hand-thumbs-down:active{
+    transform: scale(1.75) !important;
+}
+
+
 
