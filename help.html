@@ -36,14 +36,27 @@
     </nav>
 
         <!-- HOME -->
-        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column">  
+        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-around">  
+            <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle">
+                <div id="headerbtn1">
+                    <button type="button" class="btn btn-lg text-white py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
+                        <i class="bi bi-list fs-2"></i>
+                    </button> 
+                </div>  
+                <div id="headerbtn2"> 
+                    <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-6">New chat</button>
+                </div>  
+                <div id="headerbtn3">
+                    <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-2 py-1">+</button>
+                </div>
+            </header>
             <section id="home" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mb-5">
 
                 <h1 class="text-md-center m-5 fw-bold"><i class="bi bi-question-square pe-2"></i>Help</h1>
                 <!-- Icone interrogation <i class="bi bi-question-square"></i> -->
                 <p class="text-white-50 fs-7 my-3 d-flex justify-content-evenly text-center">We've trained a model called ChatGPT which interacts in a conversational </br> way. The dialogue format makes it possible for ChatGPT to answer followup</br> questions, admit its mistakes, challenge incorrect premises, and reject</br> inappropriate requests.</p>
                 <p class="text-white-50 fs-7 my-3 d-flex justify-content-evenly text-center">This is a beta version of chatGPT AI, so for the moment you can ask him only</br> 9 questions.</p>
-                <h5 class="fs-4 my-3 d-flex justify-content-evenly text-center">Questions</h5>
+                <h5 class="fs-4 my-3 d-flex justify-content-evenly text-center mt-5">Questions</h5>
                 <div class="d-flex justify-content-evenly text-center fs-7">
                     <div class="d-flex flex-column col-4 mb-5">  
                         <div class="d-inline bg-secondary-subtle m-1 m-md-2 rounded-3 px-1 px-sm-2 py-3">
