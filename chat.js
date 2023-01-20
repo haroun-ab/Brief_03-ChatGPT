@@ -31,11 +31,7 @@ function randomPunctuation() {
 }
 
 const tab = [
-<<<<<<< HEAD
-  { question: "Qui a toujours faim ?", answer: "Théo" },
-=======
   { question: "Qui a toujours faim ?", answer: "Théo." },
->>>>>>> 85697340eb202afb1df8bf63dcc71160e12141c0
   {
     question:
       "Ma soeur avait la moitié de mon âge quand j'avais 20 ans. J'ai maintenant 40 ans. Quel âge a ma soeur ?",
