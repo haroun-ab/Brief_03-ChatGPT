@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/1.0.0/typewriter.js"></script>
+    <title>ChatGPT</title>
+    <link rel="shortcut icon" href="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f5f9c186305e769c7ae49bd7ed601aa4~c5_720x720.jpeg?x-expires=1674032400&x-signature=Xo7N9Nq8b6oKPLexshs1XorTUSI%3D" type="image/x-icon">
 </head>
-    <!-- <div class="text-light bg-white bg-opacity-50">-</div>
-    <div class="text-light bg-white bg-opacity-25">-</div> -->
-
-        <!-- HOME -->
-
     <body class="position-relative d-flex bg-dark text-white" style="min-width: 370px;">
-
     <!-- SIDE MENU (OFFCANVAS)-->
     <nav id="navbar" class="navbar navbar-expand-md vh-100 col-md-3 col-xl-2">
         <div class="offcanvas offcanvas-bg-color offcanvas-start text-bg-dark w-75" data-bs-backdrop="static" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
@@ -25,11 +21,11 @@
             </div>
             <div class="offcanvas-body d-flex flex-column justify-content-between vh-100 p-0">
                 <div id="newChatBtn" class="p-2">
-                    <button type="button" class="d-flex align-items-center text-white btn btn-outline-secondary w-100 d-flex col-align-self-start m-0"><span class="fs-4 ms-1 me-3">+</span><span class="fs-6">New chat</span></button>
+                    <a href="./index.html" class="d-flex align-items-center text-white btn btn-outline-secondary w-100 d-flex col-align-self-start m-0"><span class="fs-4 ms-1 me-3">+</span><span class="fs-6">New chat</span></a>
                 </div>
                 <div id="links" class="w-100 p-2">  
                     <hr class="bg-danger border-2 border-top border-dark-subtle"> 
-                    <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-question-square pe-2"></i>Help</a>
+                    <a class="btn btn-dark d-flex col-align-self-start" href="./help.html" role="button"><i class="bi bi-question-square pe-2"></i>Help</a>
                     <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-moon pe-2"></i>Dark mode</a>
                     <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-discord pe-2"></i>OpenAI Discord</a>
                     <a class="btn btn-dark d-flex col-align-self-start" href="#" role="button"><i class="bi bi-box-arrow-up-right pe-2"></i>Updates & FAQ</a>
@@ -38,8 +34,8 @@
             </div>
         </div>
     </nav>
-
-        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-between vh-100">  
+        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-between">  
+        <div id="top" class="col-12" style="max-height: 83vh; overflow: scroll;">
             <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle">
                 <div id="headerbtn1">
                     <button type="button" class="btn btn-lg text-white py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
@@ -47,14 +43,16 @@
                     </button> 
                 </div>  
                 <div id="headerbtn2"> 
-                    <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-6 ">New chat</button>
+                    <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-6">New chat</button>
                 </div>  
                 <div id="headerbtn3">
                     <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-2 py-1">+</button>
                 </div>
             </header>
-            
-            <section id="accueil" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mt-sm-5 pt-sm-5">
+
+        </div>
+            <section id="home" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mt-sm-5 pt-sm-5">
+
                 <h1 class="text-start text-sm-center m-5 fw-bold">ChatGPT</h1>
                 <div class="d-flex justify-content-evenly text-center fs-7">
                     <div class="d-flex flex-column col-4 mb-5 ">  
@@ -101,22 +99,23 @@
             </section>
 
             <!-- INPUT -->
-            <section id="input-section" class="border d-flex align-items-center flex-column mx-auto" style="height:20vh">
-                <div id="input-container" class="d-flex align-self-center justify-content-between col-12 col-lg-9 col-xl-8 border-0 rounded-3 bg-secondary-subtle shadow bs-1 p-1">
+            <section id="input-section" class="col-11 col-md-10 col-xl-7 d-flex align-items-center justify-content-end flex-column mx-auto" style="max-height:17vh">
+                <div class="form-check form-switch align-self-start col-1 ms-1" style="width: fit-content;">
+                    <input class="form-check-input" style="cursor: pointer;" type="checkbox" id="grootBox">
+                    <label class="form-check-label" for="grootBox">Groot mode</label>
+                </div>
+                <form id="input-container" class="d-flex align-self-center justify-content-between col-12 border-0 rounded-3 bg-secondary-subtle shadow bs-1 p-1 mx-2 mx-sm-0">
                     <input id="input" class="col-11 border-0 h-100 text-light bg-dark bg-transparent fs-6 p-1 p-md-2 border-0">                    
                     <div class="col-1 d-flex ps-0 ps-sm-3 ">
-                        <button id="sendBtn" class="border-0 bg-transparent">
+                        <button id="send-btn" class="border-0 bg-transparent">
                             <svg id="Group_10235" data-name="Group 10235" xmlns="http://www.w3.org/2000/svg" fill="#ffffff8a" width="18" height="18" viewBox="0 0 173.64 149.826">
                                 <path id="Path_8370" data-name="Path 8370" d="M163.3,94.537,23.2,36.4A16.767,16.767,0,0,0,.529,56.035L13,104.936H74.053a5.087,5.087,0,0,1,0,10.175H13l-12.47,48.9A16.768,16.768,0,0,0,23.2,183.643l140.1-58.132a16.767,16.767,0,0,0,0-30.974Z" transform="translate(-0.001 -35.111)"/>
                             </svg>
                         </button>
                         
                     </div>
-                    <div class="form-check form-switch col-1 ms-3" style="width: fit-content;">
-                        <input class="form-check-input" style="cursor: pointer;" type="checkbox" id="grootBox">
-                        <label class="border form-check-label" for="grootBox" >Groot mode</label>
-                    </div>
-                </div>
+                    
+                </form>
                 <p class="col-12 text-white-50 m-1 m-lg-2 text-center" style="font-size:13px"><span class="text-decoration-underline">ChatGPT Dec 15 Version</span>. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.</p>
 
             </section>
@@ -141,9 +140,9 @@
                    </div>
                    
                    <div class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3">
-                    <img width="22" class="ms-2 me-4" src="https://emojigraph.org/media/apple/police-car-light_1f6a8.png"/>
-                    <p class="m-auto">While we have safeguards in place, the system may </br>occasionally generate incorrect or misleading information </br> and produce offensive or biasedcontent. It is not intended to give advice.</p>
-                </div>
+                        <img width="22" class="ms-2 me-4" src="https://emojigraph.org/media/apple/police-car-light_1f6a8.png"/>
+                        <p class="m-auto">While we have safeguards in place, the system may </br>occasionally generate incorrect or misleading information </br> and produce offensive or biasedcontent. It is not intended to give advice.</p>
+                    </div>
                </div>
                <div class="d-flex justify-content-end pb-5 pe-3 pt-1">
                    <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle" id="p" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Next</button>
@@ -153,7 +152,7 @@
     </div>
             
              <!-- Modal 2 -->
-             <div class="modal fade text-white bg-white bg-opacity-10" data-bs-backdrop="static" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">                <div class="modal-dialog modal-dialog-centered">           
+            <div class="modal fade text-white bg-white bg-opacity-10" data-bs-backdrop="static" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">                <div class="modal-dialog modal-dialog-centered">           
                     <div class="modal-content bg-dark shadow-lg p-1">
                        <div class="p-3 ">
                            <h2 class="modal-title fs-4 py-3 border-bottom border-secondary-subtle fw-bold" id="exampleModalToggleLabel1">ChatGPT</h2>
@@ -169,10 +168,11 @@
                            </div>
                            
                            <div class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3">
-                            <img width="22" class="ms-2 me-4" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/locked-with-key_1f510.png"/>
-                            <p class="m-auto">Please don't share any sensitive information in your conversations.</p>
-                        </div>
+                                <img width="22" class="ms-2 me-4" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/locked-with-key_1f510.png"/>
+                                <p class="m-auto">Please don't share any sensitive information in your conversations.</p>
+                            </div>
                        </div>
+
                        <div class="d-flex justify-content-between pb-5 px-3 pt-1" >
                         <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle" id="p" data-bs-target="#myModal" data-bs-toggle="modal">Back</button>
                         <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle ms-2" id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Next</button>
@@ -212,24 +212,17 @@
                 </div>
             </div>
 
-    <script>
-        const input = document.querySelector('#input')
-        let isFocus= ""
-        input.onfocus = (e) => {
-            document.querySelector("#input-container").style.cssText ='background: #434250 !important; box-shadow: 0px 0px 10px #0000004f !important ';
-        } 
+    <!-- <script>
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script> -->
 
-        input.onblur = (e) => {
-            document.querySelector("#input-container").style.cssText ='background: #3F3E4A !important'
-        } 
-    </script>
-
-    <script>
-        //  $(document).ready(function(){
-        //     $("#myModal").modal('show');
-        // });
-    </script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    </body>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="chat.js"></script>  
+
+</body>
+
 </html>
