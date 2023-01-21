@@ -192,14 +192,12 @@ function chatAnswer(e) {
       thumbsUp.style.cssText = "" 
     } else {
       btnUp = true;
-      console.log('like')
       thumbsUp.style.cssText = "color: lightgreen !important" 
     }
   }
 
   const thumbsDown =  answerDiv.childNodes[2].childNodes[1]
   thumbsDown.onclick = () => {
-    console.log("down")
     if(btnUp == true){
       btnDown = true;
       thumbsDown.style.cssText = "color: red !important"

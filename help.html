@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="./logo.jpg" type="image/x-icon">
 </head>
     
-    <body class="d-flex bg-primary vh-100 text-white" style="min-width: 390px;">
+    <body class="d-flex bg-primary text-white" style="min-width: 390px;">
         
         <nav id="navbar" class="bg-dark navbar navbar-expand-md vh-100 col-md-3 col-xl-2">
             <div class="offcanvas offcanvas-bg-color offcanvas-start text-bg-dark w-75" data-bs-backdrop="static" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel">
@@ -37,20 +37,22 @@
         
         <!-- HOME -->
 
-        <main class="bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-around">  
-            <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle">
-                <div id="headerbtn1">
-                    <button type="button" class="btn btn-lg text-white py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
-                        <i class="bi bi-list fs-2"></i>
-                    </button> 
-                </div>  
-                <div id="headerbtn2"> 
-                    <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-6">New chat</button>
-                </div>  
-                <div id="headerbtn3">
-                    <a href="./index.html" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-2 py-1">+</a>
-                </div>
-            </header>
+        <main class=" bg-primary position-relative col-12 col-md-9 col-xl-10 d-flex flex-column justify-content-between">  
+            <div id="top" class="col-12" style="max-height: 83vh; overflow: scroll;">
+                <header class="d-md-none d-flex justify-content-between align-items-center col-12 border-bottom border-dark-subtle">
+                    <div id="headerbtn1">
+                        <button type="button" class="btn btn-lg text-white py-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
+                            <i class="bi bi-list fs-2"></i>
+                        </button> 
+                    </div>  
+                    <div id="headerbtn2"> 
+                        <button type="button" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-6">New chat</button>
+                    </div>  
+                    <div id="headerbtn3">
+                        <a href="./index.html" class="btn btn-lg text-white w-100 d-flex col-align-self-start fs-2 py-1">+</a>
+                    </div>
+                </header>
+            </div>
             <section id="home" class="col-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto mb-5">
 
                 <h1 class="text-start text-md-center m-5 fw-bold">Help <i class="bi bi-question-square pe-2"></i></h1>
