@@ -2,7 +2,7 @@
 
 ## Contexte du projet
 
-Nous avons créer un créé un clone de ChatGPT pouvant répondre à quelques questions prédéfinies
+Nous avons créer un créé un clone de ChatGPT pouvant répondre à quelques questions prédéfinies  
 Le projet comprend 2 pages :
 
 • Une page ACCUEIL dans laquelle on peut poser des questions à ChatGPT qui enverra une réponse instantanée
